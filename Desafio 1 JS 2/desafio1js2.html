@@ -1,0 +1,108 @@
+<html>
+<head>
+	<title>Desafio 1 JS 2</title>
+</head>
+<body>
+    <script>
+        var n=0;
+        var acum_notas=0;
+        var cant_aprob=0;
+        function agregar(){
+            n++;
+            let listado=document.getElementById("alumnos");
+            listado.innerHTML+=n+" - Nombre del Estudiante: "+document.f1.nombre.value+"<br>"+
+            "Nota desafio 1: "+document.f1.desafio1.value+"<br>"+
+            "Nota desafio 2: "+document.f1.desafio2.value+"<br>"+
+            "Nota desafio 3: "+document.f1.desafio3.value+"<br>"+
+            "Nota desafio 4: "+document.f1.desafio4.value+"<br>"+
+            "Nota examen: "+document.f1.examen.value+"<br>"+
+            "Nota final (promedio de las 4 notas del desafio): "+document.f1.notafinal.value+"<br>"+
+            "Estatus: "+document.f1.estatus.value+"<br>";
+           
+            document.f1.reset(); 
+
+            document.f1.btnAgregar.disabled=true;
+            document.f1.btnFinalizar.disabled=false;
+        }
+        function procesar(){
+            let nota1=parseFloat(document.f1.desafio1.value);
+            let nota2=parseFloat(document.f1.desafio2.value);
+            let nota3=parseFloat(document.f1.desafio3.value);
+            let nota4=parseFloat(document.f1.desafio4.value);
+            let nota5=parseFloat(document.f1.examen.value);
+
+            let notafinala = (nota1+nota2+nota3+nota4)/4;
+            document.f1.notafinal.value=notafinala;
+
+            if(notafinala>=80 && nota5>=80){
+                let estado="Aprobado";
+                document.f1.estatus.value=estado;
+                cant_aprob=cant_aprob+1;
+            }
+                
+            else{
+                let estado2="Reprobado";
+                document.f1.estatus.value=estado2;
+            }
+            
+            acum_notas=acum_notas+notafinala;
+           
+            document.f1.btnAgregar.disabled=false;
+            
+        }
+        function finalizar(){
+            
+            let prom_nota_secc=acum_notas/n;
+            let porc_aprob=(cant_aprob/n)*100;
+
+            let listado2=document.getElementById("alumnos");
+            listado2.innerHTML+="<br>"+"<br>"+"El promedio de las notas de la seccion es: "+prom_nota_secc+"<br>"+
+            "La cantidad de alumnos aprobados es: "+cant_aprob+"<br>"+
+            "El porcentaje de aprobados en la seccion es de: "+porc_aprob+" %";
+
+            document.f1.btnFinalizar.disabled=true;
+
+        }
+
+        </script>
+    <h1>Datos</h1>
+    <form name="f1">
+        Todas las notas deben ser menores o iguales a 100 y mayores o iguales a 0 <br><br>
+        Nombre del Estudiante <br>
+        <input type="text" name="nombre" /> <br>
+        Nota del primer desafio <br>
+        <input type="text" name="desafio1" value="" /> <br>
+        Nota del segundo desafio <br>
+        <input type="text" name="desafio2" value="" /> <br>
+        Nota del tercer desafio <br>
+        <input type="text" name="desafio3" value="" /> <br>
+        Nota del cuarto desafio <br>
+        <input type="text" name="desafio4" value="" /> <br>
+        Nota del examen <br>
+        <input type="text" name="examen" value="" /> <br>
+        Nota final (promedio de los 4 desafios) <br>
+        <input type="text" name="notafinal" readonly="readonly" /> <br>
+        Estatus de aprobacion <br>
+        <input type="text" name="estatus" readonly="readonly" /> <br>
+       
+        <input type="button" value="Procesar" onclick="procesar()" />
+        <input 
+            type="button" 
+            value="Agregar"  
+            name="btnAgregar" 
+            disabled="disabled"  
+            onclick="agregar()" />
+        <input 
+            type="button" 
+            value="Finalizar"  
+            name="btnFinalizar" 
+            disabled="disabled"  
+            onclick="finalizar()" /> <br><br>
+        Presionar Finalizar solo despues de presionar Agregar
+    </form>
+    <div id="alumnos">
+        <h1>Alumnos Procesados</h1>
+
+    </div>
+</body>
+</html>

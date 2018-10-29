@@ -1,0 +1,17 @@
+Enunciado de la tarea 1 de la secci�n 2728
+
+Haga un documento html para mostrar un listado de alumnos que el usuario ir� agregando en tiempo de ejecuci�n.
+ El archivo debe contener un formulario para solicitar los datos para registrar al alumno y sus notas 
+ (nombre, nota de los 4 desaf�os y la nota del examen) y un div con el id "alumnos" para mostrar los alumnos procesados. Luego realice las siguientes actividades:
+
+1.- Crear una funci�n que retorne el calculo de la nota final de los desaf�os de un alumno. La nota final de los desaf�os es el promedio de las 4 notas
+
+2.- Crear una funci�n que retorne si un alumno esta aprobado. Un alumno esta aprobado si obtiene en los desaf�os una nota mayor a igual a 80 
+y en el examen una nota mayor o igual a 80
+
+3.- Programar el click de un bot�n para que ejecute las funciones programadas. Los valores resultantes de las funciones deben mostrarse en inputs
+
+4.- Programar el click de otro bot�n que agregue en el div "alumnos" la informaci�n del alumno que se esta procesando (Nombre, notas, 
+nota promedio de desaf�os y si esta aprobado). Al agregarlo al div, limpiar los inputs para registrar un nuevo alumno
+
+5.- Al final del div "alumnos", mostrar el promedio de la secci�n en las notas de los examenes, la cantidad de alumnos aprobados y el porcentaje que representa
