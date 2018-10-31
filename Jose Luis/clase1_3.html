@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <script>
+            var n=0;
+            function agregar(){
+                n++;
+                let listado=document.getElementById("listado");
+                listado.innerHTML+=n+" - "+document.f1.subtotal.value+"<br>";
+                document.f1.reset();
+                document.getElementById("resultado").innerHTML="";
+                document.f1.btnAgregar.disabled=true;
+            }
+            function procesar(){
+                let precio=parseFloat(document.f1.precio.value);
+                let cantidad=parseInt(document.f1.cantidad.value);
+                let subTotal = precio*cantidad;
+                document.f1.subtotal.value=subTotal;
+                document.getElementById("resultado").innerHTML=subTotal;
+                document.f1.btnAgregar.disabled=false;
+            }    
+        </script>
+        <h1>Datos</h1>
+        <form name="f1">
+            Precio <br>
+            <input type="text" name="precio" value="1"/> <br>
+            Cantidad <br>
+            <input type="text" name="cantidad"/> <br>
+            Sub Total <br>
+            <input type="text" readonly="readonly" name="subtotal" /> <br>
+            <p id="resultado"></p>
+            <input 
+                type="button" 
+                value="Procesar" 
+                onclick="procesar()" />
+            <input 
+                type="button" 
+                value="Agregar" 
+                name="btnAgregar" 
+                disabled=""
+                onclick="agregar()" />
+        </form>
+        <div id="listado">
+            <h1>Articulos Procesados</h1>
+        </div>
+    </body>
+</html>

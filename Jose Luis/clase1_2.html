@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Maqueta</title>
+	<link rel="stylesheet" type="text/css" href="css/estilos-maqueta.css">
+</head>
+<body>
+	<header>
+		<div class="contenedor">
+			<figure>
+				<img src="img/logo.png" alt="logo" title="logo">
+			</figure>
+			<form target="_blank" action="http://google.com/search" method="post">
+				<input type="text" name="q" />
+				<input type="submit" value="buscar" />
+			</form>
+			<nav>
+				<ul>
+					<li><a href="#">Inicio</a></li>
+					<li><a href="#">Servicios</a></li>
+					<li><a href="#">Portafolio</a></li>
+					<li><a href="#">Quiénes Somos</a></li>
+					<li><a href="#">Contacto</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<img src="img/imagen02.jpg" id="imagen">
+
+	<section class="banner">
+		<div class="banner__cubierta">
+			<div class="banner__contenedor-centrado">
+				<h1 id="titulo">Diseño Web</h1>
+				<a href="#" onclick="cambiarTitulo()">Ver portafolio</a>
+			</div>
+		</div>
+	</section>
+	<section class="servicios">
+		<div class="contenedor">
+			<h2>Servicios</h2>
+			<article class="servicios__contenedor" id="caja-rotando">
+				<div class="servicios__contenedor-imagen">
+					<img src="img/diseño-grafico.png">
+				</div>
+				<h3>Diseño Gráfico</h3>
+			</article>
+			<article class="servicios__contenedor" id="caja-escala">
+				<div class="servicios__contenedor-imagen">
+					<img src="img/diseño-web.png">
+				</div>
+				<h3>Diseño Web</h3>
+			</article>
+			<article class="servicios__contenedor" id="caja-inclinada">
+				<div class="servicios__contenedor-imagen">
+					<img src="img/seo.png">
+				</div>
+				<h3>SEO</h3>
+			</article>
+			<article class="servicios__contenedor" id="caja-en-movimiento">
+				<div class="servicios__contenedor-imagen">
+					<img src="img/social-media.png">
+				</div>
+				<h3>Social Media</h3>
+			</article>
+		</div>
+	</section>
+
+	<div class="contenedor">
+		<div class="caja" id="transition-linear"></div>
+		<div class="caja" id="transition-ease"></div>
+		<div class="caja" id="transition-ease-in"></div>
+		<div class="caja" id="transition-ease-in-out"></div>
+		<div class="caja" id="transition-ease-out"></div>
+	</div>
+</body>
+	<script src="clase1_2.js"></script>
+</html>

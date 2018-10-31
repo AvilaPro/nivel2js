@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+    </head>
+    <body  onblur="document.title='se salio'" onfocus="document.title='volvio'">
+        <script>
+            function registrar(f){
+                //document.form1.correo.focus();
+                f.correo.focus();
+                if (confirm("Seguro?"))
+                    f.submit();
+            }
+            function mayusculas(x){
+                x.value=x.value.toUpperCase();
+                x.style.backgroundColor="white"
+            }
+            function minusculas(input){
+                input.value=input.value.toLowerCase();
+                input.style.backgroundColor="yellow"
+            }
+            function validarBusqueda(){
+                if (document.buscar.q.value==""){
+                    document.buscar.q.style.backgroundColor="yellow";
+                    alert("Debe escribir algo para buscar");
+                    document.buscar.q.focus();
+                    return false;
+                }else{
+                    document.buscar.q.style.backgroundColor="white";
+                    return confirm('Seguro?');
+                }                    
+            }
+        </script>
+        <h2>Buscar</h2>
+        <form name="buscar" 
+            method="post" 
+            onsubmit="return validarBusqueda()" 
+            action="http://google.com/search">
+            <input type="text" name="q" />
+            <input type="submit" value="Buscar" />
+        </form>
+
+        <h2>Registro de Usuarios</h2>
+        <form name="form1" action="http://cadif1.com" >
+            <input type="text"name="correo" onfocus="minusculas(this)" onblur="mayusculas(this)"  placeholder="correo" / > <br><br>
+            <input type="text" name="usuario" onfocus="minusculas(this)" onblur="mayusculas(this)"  placeholder="usuario" / > <br><br>
+            <input type="password" name="clave" placeholder="contraseña" /> <br><br>
+            <input type="password" name="confirmacion" placeholder="confirmación" /> <br><br>
+            <input type="button" value="Registrar" onclick="registrar(this.form)"/>
+        </form>
+    </body>
+</html>

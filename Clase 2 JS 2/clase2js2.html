@@ -1,0 +1,70 @@
+
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+    <script>
+        function registrar(f){
+            f.correo.focus();
+        }
+        function mayusculas(x){
+            x.value=x.value.toUpperCase();
+            //x.style.backgroundColor="white";
+        }
+        function minusculas(input){
+            input.value=input.value.toLowerCase();
+            //input.style.backgroundColor="yellow";
+        }
+        function validarBusqueda(){
+            if (document.buscar.q.value==""){
+                document.buscar.q.style.backgroundColor="yellow";
+                alert("Debe escribir algo para buscar");
+                document.buscar.q.focus();
+                return false;
+            }else
+                return confirm('Seguro?');
+        }
+        function validarUsuario(){
+            if (document.form1.usuario.value==""){
+                document.form1.usuario.style.backgroundColor="red";
+                alert("Debe escribir Un nombre de usuario");
+                document.form1.usuario.focus();
+                return false;
+            }else
+                return confirm('Seguro?');
+        }
+        function validarCorreo(){
+            if (document.form1.correo.value==""){
+                document.form1.correo.style.backgroundColor="red";
+                alert("Debe escribir Un correo");
+                document.form1.correo.placeholder="escriba el correo";
+                document.form1.correo.focus();
+                return false;
+            }else
+                return confirm('Seguro?');
+        }
+    </script>
+    <h2>Buscar</h2>
+    <form name="buscar" onsubmit="return validarBusqueda()"  action="http://google.com/search">
+        <input type="text" name="q" />
+        <input type="submit" value="Buscar" />
+    </form>
+    <h2>Registro</h2>
+    <form name="form1">
+        Usuario <br>
+        <input type="text" onfocus="minusculas(this)" onblur="mayusculas(this)" name="correo" placeholder="correo" /> <br><br>
+        <input type="text" onfocus="minusculas(this)" onblur="mayusculas(this)" name="usuario" placeholder="usuario" /> <br><br>
+        <input type="password" name="clave" placeholder="contraseña" /> <br><br>
+        <input type="password" name="confirmacion" placeholder="confirmacion" /> <br><br>
+        <input type="button" value="Registrar" onclick="registrar(this.form);validarUsuario();validarCorreo()" /> <br><br>
+    </form>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</body>
+</html>

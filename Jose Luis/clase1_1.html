@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <h1>Nivel 2</h1>
+        <a href="#" onclick="generar()">Generar</a> |
+        <a href="#" onclick="cambiarTitulo()">Cambiar Titulo</a> |
+        <a href="#" onclick="agregarContenido()">Agregar Contenido</a>
+        <script>
+            var n=0;
+            setInterval("actualizar()",1000);
+            function agregarContenido(){
+                for (let i=1;i<=5;i++){
+                    let x = Math.random()*10;
+                    window.document.body.innerHTML+="<p>"+i+" - "+x+"</p>";
+                }
+                window.document.body.innerHTML+="<hr>"
+            }
+            function actualizar(){
+                n++;
+                window.document.title=n;
+            }
+            function cambiarTitulo(){
+                let titulo=prompt("Introduzca el titulo:");
+                let color=prompt("Color:");
+                window.document.title=titulo
+                window.document.bgColor=color;
+                window.document.fgColor="red";
+            }
+            function generar(){
+                window.document.write("Nuevo contenido");
+                window.document.writeln("<h1>Generado con Write</h1>");
+                window.document.close();
+            }
+        </script>
+    </body>
+</html>

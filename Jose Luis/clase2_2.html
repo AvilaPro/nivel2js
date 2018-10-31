@@ -1,0 +1,34 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script src="lib_validaciones.js"></script>
+        <script>
+            function validar(form){
+                if (!esta_vacio(form.nombre,"Debe seleccionar el nombre"))
+                    if (validarcorreo(form.correo))
+                        if (validar_select(form.ciudad))
+                            if (form.acepto.checked==false){
+                                alert("Debe aceptar las condiciones")
+                            }else
+                                if (confirm("Seguro?"))
+                                    form.submit();
+            }
+        </script>
+        <form>
+            <input type="text" name="nombre" placeholder="Nombre" /><br>
+            <input type="text" name="correo" placeholder="Correo" /><br>
+            <input type="password" name="clave" placeholder="Clave" /><br>
+            <select name="ciudad">
+                <option>Seleccione</option>
+                <option>Barquisimeto</option>
+                <option>Cabudare</option>
+                <option>Caracas</option>
+            </select><br>
+            <input type="checkbox" name="acepto" value=""/> 
+            Acepto las condiciones <br><br>
+            <input type="button" value="Registrar"onclick="validar(this.form)" />
+        </form>
+    </body>
+</html>
