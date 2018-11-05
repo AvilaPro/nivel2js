@@ -1,0 +1,393 @@
+<html>
+<head>
+	<title>Desafio 2 JS 2</title>
+</head>
+<body>
+    <script>
+        var n=0;
+        var acum_notas=0;
+        var cant_aprob=0;
+        function agregar(){
+            n++;
+            let listado=document.getElementById("alumnos");
+            listado.innerHTML+=n+" - Nombre del Estudiante: "+document.f1.nombre.value+"<br>"+
+            "Nota desafio 1: "+document.f1.desafio1.value+"<br>"+
+            "Nota desafio 2: "+document.f1.desafio2.value+"<br>"+
+            "Nota desafio 3: "+document.f1.desafio3.value+"<br>"+
+            "Nota desafio 4: "+document.f1.desafio4.value+"<br>"+
+            "Nota examen: "+document.f1.examen.value+"<br>"+
+            "Nota final (promedio de las 4 notas del desafio): "+document.f1.notafinal.value+"<br>"+
+            "Estatus: "+document.f1.estatus.value+"<br>";
+           
+            document.f1.reset(); 
+
+            document.f1.btnAgregar.disabled=true;
+            document.f1.btnFinalizar.disabled=false;
+        }
+
+        function preprocesar(){
+            //validacion del nombre
+            if (document.f1.nombre.value==""){
+                document.f1.nombre.style.backgroundColor="turquoise";
+                document.f1.nombre.placeholder="Escriba el nombre";
+                document.f1.nombre.focus();
+                return false;
+            }
+                if(!isNaN(document.f1.nombre.value)){
+                    document.f1.nombre.style.backgroundColor="yellow";
+                    document.f1.nombre.value="";
+                    document.f1.nombre.placeholder="Escriba letras, no numeros";
+                    document.f1.nombre.focus();
+                    return false;
+                }
+                    else{
+                            document.f1.nombre.style.backgroundColor="white";
+                        //validacion de nota desafio 1
+                        if (document.f1.desafio1.value==""){
+                            document.f1.desafio1.style.backgroundColor="turquoise";
+                            document.f1.desafio1.placeholder="Escriba la nota";
+                            document.f1.desafio1.focus();
+                            return false;
+                        }
+                            if(isNaN(document.f1.desafio1.value)){
+                                document.f1.desafio1.style.backgroundColor="yellow";
+                                document.f1.desafio1.value="";
+                                document.f1.desafio1.placeholder="Escriba numeros, no letras";
+                                document.f1.desafio1.focus();
+                                return false;
+                            }
+                                if(document.f1.desafio1.value<0 || document.f1.desafio1.value>100){
+                                    document.f1.desafio1.style.backgroundColor="orange";
+                                    document.f1.desafio1.value="";
+                                    document.f1.desafio1.placeholder="nota>0 y <100";
+                                    document.f1.desafio1.focus();
+                                    return false
+                                }
+                                    else{
+                                        document.f1.desafio1.style.backgroundColor="white";
+                                        //validacion de nota desafio 2 
+                                        if (document.f1.desafio2.value==""){
+                                            document.f1.desafio2.style.backgroundColor="turquoise";
+                                            document.f1.desafio2.placeholder="Escriba la nota";
+                                            document.f1.desafio2.focus();
+                                            return false;
+                                        }   
+                                            if(isNaN(document.f1.desafio2.value)){
+                                                document.f1.desafio2.style.backgroundColor="yellow";
+                                                document.f1.desafio2.value="";
+                                                document.f1.desafio2.placeholder="Escriba numeros, no letras";
+                                                document.f1.desafio2.focus();
+                                                return false;
+                                            }
+                                                if(document.f1.desafio2.value<0 || document.f1.desafio2.value>100){
+                                                    document.f1.desafio2.style.backgroundColor="orange";
+                                                    document.f1.desafio2.value="";
+                                                    document.f1.desafio2.placeholder="nota>0 y <100";
+                                                    document.f1.desafio2.focus();
+                                                    return false
+                                                }
+                                                    else{
+                                                        document.f1.desafio2.style.backgroundColor="white";
+                                                        //validacion de nota desafio 3
+                                                        if (document.f1.desafio3.value==""){
+                                                            document.f1.desafio3.style.backgroundColor="turquoise";
+                                                            document.f1.desafio3.placeholder="Escriba la nota";
+                                                            document.f1.desafio3.focus();
+                                                            return false;
+                                                        }   
+                                                            if(isNaN(document.f1.desafio3.value)){
+                                                                document.f1.desafio3.style.backgroundColor="yellow";
+                                                                document.f1.desafio3.value="";
+                                                                document.f1.desafio3.placeholder="Escriba numeros, no letras";
+                                                                document.f1.desafio3.focus();
+                                                                return false;
+                                                            }
+                                                                if(document.f1.desafio3.value<0 || document.f1.desafio3.value>100){
+                                                                    document.f1.desafio3.style.backgroundColor="orange";
+                                                                    document.f1.desafio3.value="";
+                                                                    document.f1.desafio3.placeholder="nota>0 y <100";
+                                                                    document.f1.desafio3.focus();
+                                                                    return false
+                                                                }
+                                                                    else{
+                                                                        document.f1.desafio3.style.backgroundColor="white";
+                                                                        //validacion de nota desafio 4
+                                                                        if (document.f1.desafio4.value==""){
+                                                                            document.f1.desafio4.style.backgroundColor="turquoise";
+                                                                            document.f1.desafio4.placeholder="Escriba la nota";
+                                                                            document.f1.desafio4.focus();
+                                                                            return false;
+                                                                        }   
+                                                                            if(isNaN(document.f1.desafio4.value)){
+                                                                                document.f1.desafio4.style.backgroundColor="yellow";
+                                                                                document.f1.desafio4.value="";
+                                                                                document.f1.desafio4.placeholder="Escriba numeros, no letras";
+                                                                                document.f1.desafio4.focus();
+                                                                                return false;
+                                                                            }
+                                                                                if(document.f1.desafio4.value<0 || document.f1.desafio4.value>100){
+                                                                                    document.f1.desafio4.style.backgroundColor="orange";
+                                                                                    document.f1.desafio4.value="";
+                                                                                    document.f1.desafio4.placeholder="nota>0 y <100";
+                                                                                    document.f1.desafio4.focus();
+                                                                                    return false
+                                                                                }
+                                                                                    else{
+                                                                                        document.f1.desafio4.style.backgroundColor="white";
+                                                                                        //validacion de nota examen
+                                                                                        if (document.f1.examen.value==""){
+                                                                                            document.f1.examen.style.backgroundColor="turquoise";
+                                                                                            document.f1.examen.placeholder="Escriba la nota";
+                                                                                            document.f1.examen.focus();
+                                                                                            return false;
+                                                                                        }   
+                                                                                            if(isNaN(document.f1.examen.value)){
+                                                                                                document.f1.examen.style.backgroundColor="yellow";
+                                                                                                document.f1.examen.value="";
+                                                                                                document.f1.examen.placeholder="Escriba numeros, no letras";
+                                                                                                document.f1.examen.focus();
+                                                                                                return false;
+                                                                                            }
+                                                                                                if(document.f1.examen.value<0 || document.f1.examen.value>100){
+                                                                                                    document.f1.examen.style.backgroundColor="orange";
+                                                                                                    document.f1.examen.value="";
+                                                                                                    document.f1.examen.placeholder="nota>0 y <100";
+                                                                                                    document.f1.examen.focus();
+                                                                                                    return false
+                                                                                                }
+                                                                                                    else{
+                                                                                                        document.f1.examen.style.backgroundColor="white";
+                                                                                                    }
+                                                                                    }
+                                                                    }
+                                                    }
+                                    }
+                    }
+        }
+
+        function procesar(){
+            //validacion del nombre
+            if (document.f1.nombre.value==""){
+                document.f1.nombre.style.backgroundColor="red";
+                alert("Debe escribir Un nombre de alumno, no dejar vacio");
+                document.f1.nombre.focus();
+                return false;
+            }
+                if(!isNaN(document.f1.nombre.value)){
+                    document.f1.nombre.style.backgroundColor="yellow";
+                    document.f1.nombre.value="";
+                    document.f1.nombre.placeholder="Escriba letras, no numeros";
+                    document.f1.nombre.focus();
+                    return false;
+                }
+                    else{
+                            document.f1.nombre.style.backgroundColor="white";
+                        //validacion de nota desafio 1
+                        if (document.f1.desafio1.value==""){
+                            document.f1.desafio1.style.backgroundColor="red";
+                            alert("Debe escribir una nota, no dejar vacio");
+                            document.f1.desafio1.focus();
+                            return false;
+                        }
+                            if(isNaN(document.f1.desafio1.value)){
+                                document.f1.desafio1.style.backgroundColor="yellow";
+                                document.f1.desafio1.value="";
+                                document.f1.desafio1.placeholder="Escriba numeros, no letras";
+                                document.f1.desafio1.focus();
+                                return false;
+                            }
+                                if(document.f1.desafio1.value<0 || document.f1.desafio1.value>100){
+                                    document.f1.desafio1.style.backgroundColor="orange";
+                                    document.f1.desafio1.value="";
+                                    document.f1.desafio1.placeholder="nota>0 y <100";
+                                    document.f1.desafio1.focus();
+                                    return false
+                                }
+                                    else{
+                                        document.f1.desafio1.style.backgroundColor="white";
+                                        //validacion de nota desafio 2 
+                                        if (document.f1.desafio2.value==""){
+                                            document.f1.desafio2.style.backgroundColor="red";
+                                            alert("Debe escribir una nota, no dejar vacio");
+                                            document.f1.desafio2.focus();
+                                            return false;
+                                        }   
+                                            if(isNaN(document.f1.desafio2.value)){
+                                                document.f1.desafio2.style.backgroundColor="yellow";
+                                                document.f1.desafio2.value="";
+                                                document.f1.desafio2.placeholder="Escriba numeros, no letras";
+                                                document.f1.desafio2.focus();
+                                                return false;
+                                            }
+                                                if(document.f1.desafio2.value<0 || document.f1.desafio2.value>100){
+                                                    document.f1.desafio2.style.backgroundColor="orange";
+                                                    document.f1.desafio2.value="";
+                                                    document.f1.desafio2.placeholder="nota>0 y <100";
+                                                    document.f1.desafio2.focus();
+                                                    return false
+                                                }
+                                                    else{
+                                                        document.f1.desafio2.style.backgroundColor="white";
+                                                        //validacion de nota desafio 3
+                                                        if (document.f1.desafio3.value==""){
+                                                            document.f1.desafio3.style.backgroundColor="red";
+                                                            alert("Debe escribir una nota, no dejar vacio");
+                                                            document.f1.desafio3.focus();
+                                                            return false;
+                                                        }   
+                                                            if(isNaN(document.f1.desafio3.value)){
+                                                                document.f1.desafio3.style.backgroundColor="yellow";
+                                                                document.f1.desafio3.value="";
+                                                                document.f1.desafio3.placeholder="Escriba numeros, no letras";
+                                                                document.f1.desafio3.focus();
+                                                                return false;
+                                                            }
+                                                                if(document.f1.desafio3.value<0 || document.f1.desafio3.value>100){
+                                                                    document.f1.desafio3.style.backgroundColor="orange";
+                                                                    document.f1.desafio3.value="";
+                                                                    document.f1.desafio3.placeholder="nota>0 y <100";
+                                                                    document.f1.desafio3.focus();
+                                                                    return false
+                                                                }
+                                                                    else{
+                                                                        document.f1.desafio3.style.backgroundColor="white";
+                                                                        //validacion de nota desafio 4
+                                                                        if (document.f1.desafio4.value==""){
+                                                                            document.f1.desafio4.style.backgroundColor="red";
+                                                                            alert("Debe escribir una nota, no dejar vacio");
+                                                                            document.f1.desafio4.focus();
+                                                                            return false;
+                                                                        }   
+                                                                            if(isNaN(document.f1.desafio4.value)){
+                                                                                document.f1.desafio4.style.backgroundColor="yellow";
+                                                                                document.f1.desafio4.value="";
+                                                                                document.f1.desafio4.placeholder="Escriba numeros, no letras";
+                                                                                document.f1.desafio4.focus();
+                                                                                return false;
+                                                                            }
+                                                                                if(document.f1.desafio4.value<0 || document.f1.desafio4.value>100){
+                                                                                    document.f1.desafio4.style.backgroundColor="orange";
+                                                                                    document.f1.desafio4.value="";
+                                                                                    document.f1.desafio4.placeholder="nota>0 y <100";
+                                                                                    document.f1.desafio4.focus();
+                                                                                    return false
+                                                                                }
+                                                                                    else{
+                                                                                        document.f1.desafio4.style.backgroundColor="white";
+                                                                                        //validacion de nota examen
+                                                                                        if (document.f1.examen.value==""){
+                                                                                            document.f1.examen.style.backgroundColor="red";
+                                                                                            alert("Debe escribir una nota, no dejar vacio");
+                                                                                            document.f1.examen.focus();
+                                                                                            return false;
+                                                                                        }   
+                                                                                            if(isNaN(document.f1.examen.value)){
+                                                                                                document.f1.examen.style.backgroundColor="yellow";
+                                                                                                document.f1.examen.value="";
+                                                                                                document.f1.examen.placeholder="Escriba numeros, no letras";
+                                                                                                document.f1.examen.focus();
+                                                                                                return false;
+                                                                                            }
+                                                                                                if(document.f1.examen.value<0 || document.f1.examen.value>100){
+                                                                                                    document.f1.examen.style.backgroundColor="orange";
+                                                                                                    document.f1.examen.value="";
+                                                                                                    document.f1.examen.placeholder="nota>0 y <100";
+                                                                                                    document.f1.examen.focus();
+                                                                                                    return false
+                                                                                                }
+                                                                                                    else{
+                                                                                                        document.f1.examen.style.backgroundColor="white";
+                                                                                                        //procesamiento de las notas
+                                                                                                        let nota1=parseFloat(document.f1.desafio1.value);
+                                                                                                        let nota2=parseFloat(document.f1.desafio2.value);
+                                                                                                        let nota3=parseFloat(document.f1.desafio3.value);
+                                                                                                        let nota4=parseFloat(document.f1.desafio4.value);
+                                                                                                        let nota5=parseFloat(document.f1.examen.value);
+
+                                                                                                        let notafinala = (nota1+nota2+nota3+nota4)/4;
+                                                                                                        document.f1.notafinal.value=notafinala;
+
+                                                                                                        if(notafinala>=80 && nota5>=80){
+                                                                                                            let estado="Aprobado";
+                                                                                                            document.f1.estatus.value=estado;
+                                                                                                            cant_aprob=cant_aprob+1;
+                                                                                                        }
+                                                                                                            
+                                                                                                        else{
+                                                                                                            let estado2="Reprobado";
+                                                                                                            document.f1.estatus.value=estado2;
+                                                                                                        }
+                                                                                                        
+                                                                                                        acum_notas=acum_notas+notafinala;
+                                                                                                        document.f1.btnAgregar.disabled=false;
+
+                                                                                                        return acum_notas;
+                                                                                                    
+                                                                                                        
+
+                                                                                                    }
+                                                                                    }
+                                                                    }
+                                                    }
+                                    }
+                    }
+        }
+
+        
+        function finalizar(){
+            
+            let prom_nota_secc=acum_notas/n;
+            let porc_aprob=(cant_aprob/n)*100;
+
+            let listado2=document.getElementById("alumnos");
+            listado2.innerHTML+="<br>"+"<br>"+"El promedio de las notas de la seccion es: "+prom_nota_secc+"<br>"+
+            "La cantidad de alumnos aprobados es: "+cant_aprob+"<br>"+
+            "El porcentaje de aprobados en la seccion es de: "+porc_aprob+" %";
+
+            document.f1.btnFinalizar.disabled=true;
+
+        }
+
+        </script>
+    <h1>Datos</h1>
+    <form name="f1">
+        Todas las notas deben ser menores o iguales a 100 y mayores o iguales a 0 <br><br>
+        Nombre del Estudiante <br>
+        <input type="text" name="nombre" onblur="preprocesar()"/> <br>
+        Nota del primer desafio <br>
+        <input type="text" name="desafio1" value="" onblur="preprocesar()"/> <br>
+        Nota del segundo desafio <br>
+        <input type="text" name="desafio2" value="" onblur="preprocesar()"/> <br>
+        Nota del tercer desafio <br>
+        <input type="text" name="desafio3" value="" onblur="preprocesar()"/> <br>
+        Nota del cuarto desafio <br>
+        <input type="text" name="desafio4" value="" onblur="preprocesar()"/> <br>
+        Nota del examen <br>
+        <input type="text" name="examen" value="" onblur="preprocesar()"/> <br>
+        Nota final (promedio de los 4 desafios) <br>
+        <input type="text" name="notafinal" readonly="readonly" /> <br>
+        Estatus de aprobacion <br>
+        <input type="text" name="estatus" readonly="readonly" /> <br><br>
+       
+        <input type="button" value="Procesar" onclick="procesar()" />
+        <input 
+            type="button" 
+            value="Agregar"  
+            name="btnAgregar" 
+            disabled="disabled"  
+            onclick="agregar()" />
+        <input 
+            type="button" 
+            value="Finalizar"  
+            name="btnFinalizar" 
+            disabled="disabled"  
+            onclick="finalizar()" /> <br><br>
+        Presionar Finalizar solo despues de haber agregado a todos los estudiantes
+        Y sus notas
+    </form>
+    <div id="alumnos">
+        <h1>Alumnos Procesados</h1>
+
+    </div>
+</body>
+</html>

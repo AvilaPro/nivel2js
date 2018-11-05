@@ -1,0 +1,13 @@
+Enunciado de la tarea 2 de la sección 2728
+
+Realizar las siguientes actividades al desafío anterior, apoyandose la librería de validación usada en clase (corregir todos las observaciones dadas en el desafío anterior):
+
+1.- Validar que los inputs no esten vacíos antes de procesarlos
+
+2.- Validar al abandonar un input de las notas, que contengan sólo números y que las notas tengan valores entre 0 y 100.
+
+3.- Cuando un elemento no tenga valores válidos, hacer que aparezca un mensaje de error al lado del elemento y el elemento cambie de color
+
+4.- Al abandonar un input, si tiene un dato válido debe retomar el color anterior y debe desaparecer el mensaje de error
+
+5.- Validar que el input del nombre del alumno no tenga números

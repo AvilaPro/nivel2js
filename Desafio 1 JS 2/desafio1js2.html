@@ -24,7 +24,9 @@
             document.f1.btnAgregar.disabled=true;
             document.f1.btnFinalizar.disabled=false;
         }
+
         function procesar(){
+            //procesamiento de las notas
             let nota1=parseFloat(document.f1.desafio1.value);
             let nota2=parseFloat(document.f1.desafio2.value);
             let nota3=parseFloat(document.f1.desafio3.value);
@@ -39,17 +41,20 @@
                 document.f1.estatus.value=estado;
                 cant_aprob=cant_aprob+1;
             }
-                
+                                                                                                            
             else{
                 let estado2="Reprobado";
                 document.f1.estatus.value=estado2;
             }
-            
+                                                                                                        
             acum_notas=acum_notas+notafinala;
-           
             document.f1.btnAgregar.disabled=false;
-            
-        }
+
+            return acum_notas;
+}
+
+
+        
         function finalizar(){
             
             let prom_nota_secc=acum_notas/n;
@@ -83,7 +88,7 @@
         Nota final (promedio de los 4 desafios) <br>
         <input type="text" name="notafinal" readonly="readonly" /> <br>
         Estatus de aprobacion <br>
-        <input type="text" name="estatus" readonly="readonly" /> <br>
+        <input type="text" name="estatus" readonly="readonly" /> <br><br>
        
         <input type="button" value="Procesar" onclick="procesar()" />
         <input 
@@ -98,7 +103,8 @@
             name="btnFinalizar" 
             disabled="disabled"  
             onclick="finalizar()" /> <br><br>
-        Presionar Finalizar solo despues de presionar Agregar
+        Presionar Finalizar solo despues de haber agregado a todos los estudiantes
+        Y sus notas
     </form>
     <div id="alumnos">
         <h1>Alumnos Procesados</h1>
