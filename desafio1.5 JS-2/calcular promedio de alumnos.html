@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/estilos.css">
+</head>
+<body>
+	<script type="text/javascript" src="calcular.js"></script>
+	<form name="fm">
+		<div id="contenedor">
+			<h3>Ingrese las 4 notas de los Desafios y notas del Examen</h3><br/>
+
+			<label class="label" for="nombre"> Ingrese el Nombre del Alumno:</label>
+			<input class="input" id="nombre" type="text" name="nombre" onblur="validarnombre(this)"><p id="error_nombre">Dato Invalido!</p><br/>
+
+			<label class="label" for="nota1">Ingrese Nota-1:</label>
+			<input class="input" id="nota1" type="text" name="nota1" onblur="validarNota(this,'error_nota1')"><p id="error_nota1">Valor Invalido!</p><br/>
+
+			<label class="label" for="nota2">Ingrese Nota-2:</label>
+			<input class="input" id="nota2" type="text" name="nota2" onblur="validarNota(this,'error_nota2')"><p id="error_nota2">Valor Invalido!</p><br/>
+
+			<label class="label" for="nota3">Ingrese Nota-3:</label>
+			<input class="input" id="nota3" type="text" name="nota3" onblur="validarNota(this,'error_nota3')"><p id="error_nota3">Valor Invalido!</p><br/>
+
+			<label class="label" for="nota4">Ingrese Nota-4:</label>
+			<input class="input" id="nota4" type="text" name="nota4" onblur="validarNota(this,'error_nota4')"><p id="error_nota4">Valor Invalido!</p><br/>
+
+			<label class="label" for="nota_examen">Ingrese Nota del Examen:</label>
+			<input class="input" id="nota_examen" type="text" name="nota_examen" onblur="validarNota(this,'error_nota_exa')"><p id="error_nota_exa">Valor Invalido!</p><br/>
+
+			<input type="button" value="Calcular" onclick="calcular()">
+			<input type="button" value="Agregar" onclick="agregar()" disabled="" name="aagregar">
+			<input type="button" value="Limpiar" onclick="limpiar()">
+
+			<h4>Resultados:</h4>
+
+			<label>Promedio:</label>
+			<input class="input" type="text" name="prom">
+			<input class="input" type="text" name="aprobacion">
+			<input class="input" type="text" name="aprobacion_exa"><br>
+
+			<div id="alumno">
+				<h2>Alumnos</h2>
+			</div><br>
+			<label>Promedio seccion: </label> 
+			<input class="input" type="text" name="prom_secc"><br>
+
+			<label>Cantidad de aprobados: </label>
+			<input class="input" type="text" name="cantidad_apro"><br>
+
+			<label>Porcentaje de aprobados: </label> 
+			<input class="input" type="text" name="porcentaje" >
+		</div>
+	</form>
+</body>
+</html>
