@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <meta charset="utf-8 />"
+    </head>
+    <body onkeydown="cambiarColor(event)" style="background-color: rgb(1,1,1)" >
+        <script src="lib_validaciones.js"></script>
+        <script>
+            var r=1,g=1,b=1;
+            function cambiarColor(e){
+                console.log(e.keyCode)
+                if (e.keyCode == 38)
+                    r=g=b+=10;
+                else    
+                    if (e.keyCode==40)
+                        r=g=b-=10;
+
+                document.body.style.backgroundColor="rgb("+r+","+g+","+b+")";
+            }
+            function validar(form){
+                if (!esta_vacio(form.nombre,"Debe seleccionar el nombre"))
+                    if (validarcorreo(form.correo))
+                        if (validar_select(form.ciudad))
+                            if (form.acepto.checked==false){
+                                alert("Debe aceptar las condiciones")
+                            }else
+                                if (confirm("Seguro?"))
+                                    form.submit();
+            }
+        </script>
+        <form>
+            <input 
+                onkeypress="return validarletra(event)"
+                type="text" 
+                name="nombre" 
+                placeholder="Nombre" /><br>
+            <input type="text" name="correo" placeholder="Correo" /><br>
+            <input type="password" name="clave" placeholder="Clave" /><br>
+            <select name="ciudad">
+                <option>Seleccione</option>
+                <option>Barquisimeto</option>
+                <option>Cabudare</option>
+                <option>Caracas</option>
+            </select><br>
+            <input type="checkbox" name="acepto" value=""/> 
+            Acepto las condiciones <br><br>
+            <input type="button" value="Registrar"onclick="validar(this.form)" />
+        </form>
+    </body>
+</html>
