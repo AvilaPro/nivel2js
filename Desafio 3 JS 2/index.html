@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Desafio 3 JS 2</title>
+	<link rel="stylesheet" type="text/css" href="css/estilos.css">
+</head>
+<body class="general">
+	<header class="general-header">
+		<div class="general-header-figure">
+			<figure>
+				<img src="img/logo-cadif1.jpg">
+			</figure>
+		</div>
+		<div class="general-header-nav">
+			<nav>
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<section class="general-section">
+		<h1 class="general-section-h1" name="h1" id="h1">Registro Exitoso</h1>
+		<form class="general-section-form" name="form1">
+			<div class="general-section-form-cont" name="cont">
+				<h3>Cedula</h3>
+				<div class="formulario" name="formulario">
+					<input type="text" name="cedula" placeholder="cedula"> <label name="errorcedula" id="errorcedula" class="error">Error en Cedula</label>
+				</div><br>
+				 <h3>Nombre</h3>
+				<div class="formulario">
+					<input type="text" name="nombre" placeholder="nombre"><div name="errorNombre" class="error" id="errornombre">Error en Nombre</div>
+				</div><br>
+				<h3>Fecha de Nacimiento</h3>
+				<div class="formulario">
+					<select name="dia">
+						<option>Dia</option>
+						<option>01</option>
+						<option>02</option>
+						<option>03</option>
+						<option>04</option>
+						<option>05</option>
+						<option>06</option>
+						<option>07</option>
+						<option>08</option>
+						<option>09</option>
+						<option>10</option>
+						<option>11</option>
+						<option>12</option>
+						<option>13</option>
+						<option>14</option>
+						<option>15</option>
+						<option>16</option>
+						<option>17</option>
+						<option>18</option>
+						<option>19</option>
+						<option>20</option>
+						<option>21</option>
+						<option>22</option>
+						<option>23</option>
+						<option>24</option>
+						<option>25</option>
+						<option>26</option>
+						<option>27</option>
+						<option>28</option>
+						<option>29</option>
+						<option>30</option>
+						<option>31</option>
+					</select> 
+					<select name="mes">
+						<option>Mes</option>
+						<option>Enero</option>
+						<option>Febrero</option>
+						<option>Marzo</option>
+						<option>Abril</option>
+						<option>Mayo</option>
+						<option>Junio</option>
+						<option>Julio</option>
+						<option>Agosto</option>
+						<option>Septiembre</option>
+						<option>Octubre</option>
+						<option>Noviembre</option>
+						<option>Diciembre</option>
+					</select>
+					<select name="anho">
+						<option>Año</option>
+						<option>1985</option>
+						<option>1986</option>
+						<option>1987</option>
+						<option>1988</option>
+						<option>1989</option>
+						<option>1990</option>
+						<option>1991</option>
+						<option>1992</option>
+						<option>1993</option>
+						<option>1994</option>
+						<option>1995</option>
+					</select>
+				</div>
+				<br>
+				<div class="formulario">
+					<input type="radio" name="sexo" value="Masculino" checked> Masculino
+					<input type="radio" name="sexo" value="Femenino"> Femenino
+				</div><br>
+				<h3>Correo</h3>
+				<div class="formulario">
+					<input type="text" name="correo" placeholder="Correo"><div name="errorCorreo" class="error" id="errorcorreo">Error en Correo</div>
+				</div><br>
+				<h3>Telefono</h3>
+				<div class="formulario">
+					<input type="number" name="telefono" placeholder="Telefono"><div name="errorTelefono" class="error" id="errortelefono">Error Telefono</div>
+				</div><br>
+				<h3>Nombre de Usuario</h3>
+				<div class="formulario">
+					<input type="text" name="usuario" placeholder="Nombre de Usuario"><div name="errorUsuario" class="error" id="errorusuario">Error Usuario</div>
+				</div>
+				<h3>Clave</h3>
+				<div class="formulario">
+					<input type="password" name="clave" placeholder="Clave" id="clave"><div name="errorClave" class="error" id="errorclave">Error en la clave</div>
+				</div>
+				<h3>Confirmar Clave</h3>
+				<div class="formulario">
+					<input type="password" name="clave2" placeholder="Confirmar Clave"><div name="errorClave2" class="error" id="errorclave2">Error en la confirmacion de Clave</div>
+				</div>
+				<h3>Curso que desea realizar</h3>
+				<div class="formulario">
+					<select name="curso">
+						<option>Curso</option>
+						<option>FrontEnd</option>
+						<option>BackEnd</option>
+						<option>Diseño Web</option>
+						<option>Java</option>
+						<option>Electronica</option>
+					</select>
+				</div>
+				<h3>Horario (Indicar)</h3>
+				<textarea rows="3" cols="25" name="horario"></textarea><br>
+				<input type="button" name="registrar" value="Registrar">
+			</div>	
+		</form>
+	</section>
+	<footer class="general-footer">
+		<p class="pfooter"> Creado por Eduardo Mejias</p>
+	</footer>
+	<script src="js/lib_validaciones.js"></script>
+	<script src="js/desafio3js2.js"></script>
+</body>
+</html>

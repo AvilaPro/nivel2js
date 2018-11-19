@@ -1,0 +1,79 @@
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+html{
+	height: 100%;
+}
+body{
+	height: 100%;
+	width: 100%;
+	display: grid;
+	grid-template-rows: repeat(8, 12.5%);
+	grid-template-columns: repeat(3, 33.3%);
+	grid-row-gap: 2%;
+}
+header{
+	background-color: #B2EBF2;
+	grid-column: 1/4;
+	display: flex;
+	justify-content: space-around;
+}
+nav{
+	background-color: #FFEB3B;
+}
+ul{
+	display: flex;
+}
+section{
+	background-color: #8BC34A;
+	grid-column: 1/4;
+	grid-row: 2/7;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+h1{
+	display: none;
+	background-color: #4CAF50;
+	color: white;
+}
+form{
+	background-color: #80CBC4;
+	width: 30%;
+	height: 90%;
+	display: flex;
+	flex-direction: column;
+	border-radius: 10px;
+    box-shadow: 0 0 50px rgba(0,0,0,.5);
+}
+.error{
+	display: none;
+	background-color: #F50057;
+	color: white;
+}
+#errorcedula{
+	display: none;
+	background-color: #F50057;
+	color: white;
+}
+.formulario{
+	display: flex;
+}
+.general-section-form-cont{
+	padding: 5%;
+}
+select{
+	margin-right: 2%;
+}
+footer{
+	background-color: #E64A19;
+	grid-column: 1/4;
+	text-align: center;
+}
+.pfooter{
+	padding-top: 2%;
+	color: #1A237E;
+}

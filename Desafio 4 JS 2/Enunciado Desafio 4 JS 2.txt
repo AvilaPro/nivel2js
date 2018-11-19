@@ -1,0 +1,13 @@
+Enunciado de la tarea 4 de la sección 2728
+
+Crear un formulario para registrar los productos que se desean facturar a un cliente. En el formulario se debe escribir el código de un producto. Si el producto existe, se debe mostrar en un input de solo lectura su nombre y en otro su precio. EL usuario puede escribir la cantidad del producto que se desea comprar el cliente, para luego agregarlo al listado de productos que se van a facturar. Realizar las siguientes actividades:
+
+1.- Declarar e inicializar con valores arbitrarios 4 arreglos paralelos: uno para los código de los productos, uno para los nombres, uno para los precios y otro para las existencia de los productos (al menos debe agregar los datos de 5 productos)
+
+2.- Programar que al presionar enter en el input del código del producto, se busque el código escrito por el usuario en el arreglo de códigos. Si existe el código, se debe mostrar en sus respectivos inputs el nombre y el precio del producto, si no existe, se debe mostrar un mensaje de error indicando que no existe
+
+3.- Programar que en el input de la cantidad del producto que se desea vender, solo se reciban números. Validar que se puedan vender mínimo 1 producto y máximo la existencia que hay del producto (verificar en el arreglo de existencias para determinar si hay suficientes unidades). Mientras se escribe la cantidad, se debe ir mostrando en un input de solo lectura el subtotal a pagar por este producto (cantidad x precio del producto)
+
+4.- Si todo es válido, agregar los datos del producto introducidos por el usuario (código, nombre, precio, cantidad y sub total) en una tabla al lado del formulario, donde se vaya visualizando los productos que se han agregado a la factura. Se debe mostrar al final de la tabla, el sub total de la factura (sumatoria de todos los subtotales de cada producto agregado), el iva (12% del sub total) y el total a pagar (sub total de la factura más iva)
+
+5.- En cualquier momento, cuando al menos se haya agregado un producto a la factura, el usuario puede procesar la factura completa, confirmando primero al usuario si esta seguro, para luego limpiar la tabla donde va el listado de la factura (para hacer una nueva factura)

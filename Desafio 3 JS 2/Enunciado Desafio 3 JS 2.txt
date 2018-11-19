@@ -1,0 +1,13 @@
+Enunciado de la tarea 3 de la sección 2728
+
+Crear un archivo HTML con un formulario para registrarse en curso de CADI F1. Los datos para el registro son: Cédula, nombre, fecha de nacimiento (usar 3 select para dia, mes y año), sexo, correo, teléfono, Nombre de usuario, clave, confirmación de la clase, curso que desea realizar (usar un select), nivel (usar un select) y el horario (textarea).
+ 
+1.- Validar que la cedula, nombre, correo, nombre de usuario y clave no esten vacíos
+
+2.- Validar que los inputs de la cédula y el número de teléfono sólo reciban números
+
+3.- Validar que el nombre de usuario tenga al menos 4 caracteres, NO comience con número y NO tenga espacios en blanco
+
+4.- Validar que la clave tenga al menos 4 caracteres y sea igual a la confirmación de la clave
+
+5.- Hacer que cuando un dato no sea válido aparezca el mensaje de error particular de cada input en un div al lado del dato inválido, si no hay error, mostrar un mensaje de registro exitoso en un div en la parte superior de la página y limpiar los inputs (y los mensajes de error)

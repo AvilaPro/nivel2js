@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Desafio 4 JS 2</title>
+    </head>
+    <body style="display: inline-flex; ">
+        <form action="" name="form1">
+            Ingrese el codigo del Producto <br>
+            <input type="text" name="codigo" onkeypress="validarenter(event)"><br><br>
+            <label id="errorcodigo" style="color: red; display:none">El codigo no existe <br><br></label>  
+            Datos del Producto <br>
+            Nombre <br>
+            <input type="text" name="nombre" readonly="readonly"  id=""> <br><br>
+            Precio <br>
+            <input type="text" name="precio" readonly="readonly" id=""> <br><br>
+            <div id="cantidad" style="display: none">
+                Cantidad que desea comprar<br>
+                <input type="text" name="cantidad" onkeyup="subTotal(event)" id=""> <br><br>
+                <label id="errorcantidad" style="color: red; display:none">No hay esta cantidad de este producto, intente con otra. <br><br></label>
+                Sub-total a Pagar <br>
+                <input type="text" name="subtotal" readonly="readonly" id="">
+            </div>
+            <input type="button" value="Agregar"  name="btnAgregar" disabled="disabled">
+            
+        </form>
+        <div id="lista">
+            <h1>Factura</h1>
+            <table width="500" id="tabla1">
+                <tr>
+                    <th name="col1">Nombre</th>
+                    <th name="col2">Precio</th> 
+                    <th name="col3">Cantidad</th>
+                </tr>
+               
+            </table>
+            <form name="form2">
+                <h4>Subtotal</h4>
+                <input type="text" name="subsubtotal" readonly="readonly" id="">
+                <h4>Iva</h4>
+                <input type="text" name="iva" readonly="readonly" id="">
+                <h4>Total</h4>
+                <input type="text" name="total" readonly="readonly" id=""><br><br>
+                <input type="button" value="Facturar"  name="btnFacturar" disabled="disabled">
+            </form>
+            
+        </div>
+
+        
+        <script src="desafio4.js"></script>
+    </body>
+</html>
