@@ -69,6 +69,19 @@ function esta_vacio_formulario(campo,mensaje,validador)
 	}else
 		return false;
 }
+function esta_vacio_nomensaje(campo,validador)
+{
+	if ( campo.value == "" )
+	{
+		document.getElementById(validador).style.display="block";
+		campo.focus();
+		return true;
+	}else{
+		document.getElementById(validador).style.display="none";
+		return false;
+	}
+		
+}
 function validar_usuario(campo,mensaje,validador){
 	if(campo.length<=4){
 		alert(mensaje);
