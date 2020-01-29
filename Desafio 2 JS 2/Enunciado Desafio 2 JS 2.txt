@@ -1,6 +1,7 @@
 Enunciado de la tarea 2 de la sección 2728
 
-Realizar las siguientes actividades al desafío anterior, apoyandose la librería de validación usada en clase (corregir todos las observaciones dadas en el desafío anterior):
+Realizar las siguientes actividades al desafío anterior, apoyandose la librería de validación usada en clase 
+(corregir todos las observaciones dadas en el desafío anterior):
 
 1.- Validar que los inputs no esten vacíos antes de procesarlos
 
