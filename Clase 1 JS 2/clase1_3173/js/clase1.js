@@ -1,3 +1,7 @@
+//Nota: En visual studio Code con "alt+Z" activan el ajuste de linea en el archivo... pruebenlo, le ayudara...
+
+
+
 //Punto 1 de la practica
 //window.location = prompt("Ingrese la Url que desea visitar: " );
 
@@ -5,7 +9,7 @@
 var ancho = screen.width;
 var largo = screen.height;
 
-alert("El ancho de la pantalla es: "+ ancho + " y el largo es: "+ largo);
+//alert("El ancho de la pantalla es: "+ ancho + " y el largo es: "+ largo);
 
 //Punto 3 de la practica
 //Directamente hecho en el HTML
@@ -44,10 +48,13 @@ function insertarObjeto(){
 }
 
 //PRACTICA 4
-var cambio1 = document.getElementById("a");
 
-cambio1.onclick=cambioColor;
+var campo1 = document.getElementById("alfa");
 
-function cambioColor(){
-    
+campo1.onclick = cambioColor;
+
+function cambioColor() {
+    campo1.style.backgroundColor="red";
 }
+
+//Nota: deben colocar el script debajo del body para que Javascript pueda encontrar los elementos de HTML que se estan buscando. Si se coloca antes JS buscara los elementos antes de que sean creados. OJO
